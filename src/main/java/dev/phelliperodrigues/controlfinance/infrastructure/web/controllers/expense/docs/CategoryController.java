@@ -1,5 +1,7 @@
 package dev.phelliperodrigues.controlfinance.infrastructure.web.controllers.expense.docs;
 
+import dev.phelliperodrigues.controlfinance.application.dto.expense.CategoryRequestDTO;
+import dev.phelliperodrigues.controlfinance.application.dto.expense.CategoryResponseDTO;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
@@ -14,5 +16,5 @@ public interface CategoryController {
     @PostMapping
     @Operation(summary = "Create a expense category", description = "", method = "create(CategoryDTO dto)")
     @ResponseStatus(HttpStatus.CREATED)
-    ResponseEntity<Object> create(@RequestBody Object request);
+    ResponseEntity<CategoryResponseDTO> create(@RequestBody CategoryRequestDTO request);
 }
